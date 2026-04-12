@@ -36,10 +36,10 @@ def start_chat():
             for msg in response["messages"][1:]:
                 # If it's an AI message AND has tool_calls, the agent decided to "Act".
                 if msg.type == "ai" and getattr(msg, "tool_calls", None):
-                    print(f"🛠️  Calling Tool: {[t['name'] for t in msg.tool_calls]}")
+                    print(f" Calling Tool: {[t['name'] for t in msg.tool_calls]}")
                 # If it's a Tool message, the tool finished executing (the "Observe" phase).
                 elif msg.type == "tool":
-                    print(f"✅  Tool '{msg.name}' Finished.")
+                    print(f" Tool '{msg.name}' Finished.")
             print("-------------------\n")
             
             # THEORY: The ReAct loop concludes when the LLM decides it has enough information 
@@ -50,9 +50,9 @@ def start_chat():
             # Fallback: Local, smaller models (like Llama 3.1 8B) can sometimes lose track 
             # of formatting instructions and return empty final responses after tool calls.
             if not output or not str(output).strip():
-                output = "⚠️ The agent finished but returned an empty response. (Common with local models)"
+                output = " The agent finished but returned an empty response. (Common with local models)"
         else:
-            output = f"⚠️ Unexpected response: {response}"
+            output = f" Unexpected response: {response}"
             
         print(f"  Final Response: {output}\n")
 

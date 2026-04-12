@@ -1,11 +1,38 @@
-# Python-generated files
+# Python
 __pycache__/
 *.py[oc]
 build/
 dist/
 wheels/
 *.egg-info
-
-# Virtual environments
 .venv
 venv
+
+# Java / Maven
+ai-agent-backend/target/
+ai-agent-backend/data/
+ai-agent-backend/agent-output/
+*.class
+*.jar
+*.war
+*.log
+.idea/
+*.iml
+
+# React / Node
+ai-agent-frontend/node_modules/
+ai-agent-frontend/dist/
+ai-agent-frontend/.cache/
+
+# Environment
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+*.swp
+*.swo

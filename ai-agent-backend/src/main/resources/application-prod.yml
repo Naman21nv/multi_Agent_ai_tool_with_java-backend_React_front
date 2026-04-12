@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/aiagentdb
+    driver-class-name: org.postgresql.Driver
+    username: ${DB_USERNAME:aiagent}
+    password: ${DB_PASSWORD:aiagent}
+  
+  h2:
+    console:
+      enabled: false
+  
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+
+cors:
+  allowed-origins: ${CORS_ORIGINS:http://localhost:3000}
+
+logging:
+  level:
+    com.aiagent: INFO
+    org.springframework.web: WARN
